@@ -1,0 +1,272 @@
+@import "variables";
+@import "mixins";
+
+@import url(../font-awesome/css/font-awesome.min.css);
+@font-face {
+    font-family: 'Damion';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Damion'), url(https://fonts.gstatic.com/s/damion/v6/ksD1WDDgZAyMd1VY75GZ6evvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $main-font-stack;
+    margin: 0;
+    padding: 0;
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    h1 {
+        line-height: 3rem;
+	    font-size: 1.3rem;
+    }
+    a {
+	    color: $darkest-colour;
+	    text-decoration: none;
+        a:hover {
+	        color: $accent-dark;
+        }
+    }
+    .box {
+        width: 90%;
+        max-width: 80rem;
+        margin: 0 auto;
+    }       
+}
+
+.bg-white {
+    background-color: $lightest-colour;
+
+    .first {
+        #company {
+            font-size: 3rem;
+        }
+
+        ul {
+            margin: 0 0 1.5rem 0;
+            padding: 0;
+            border: 1px solid $mid-tone-dark;
+
+                li a {
+                    margin: 0 0 1.5rem 0;
+                    padding: 0;
+                    border: 1px solid $mid-tone-dark;
+                    }
+
+                li a:hover {
+                    background-color: $dark-tone;
+                    border-bottom: 1px solid $dark-tone;
+                    color: white;
+                    text-shadow: 0 1px 1px $complimentary-dark;
+                    }
+
+                ul li:nth-of-type(6) a {
+                    border-bottom: none;
+                }
+        }
+    }
+}
+
+.bg-people {
+    background-image: url(../images/bg/creative-office.jpg);
+    background-size: cover; /* bg image will always cover the assigned area regardless of screen-size */
+    color: $lightest-colour;
+    padding: 2rem 0 3rem 0;
+    
+    a {
+        display: block;
+        color: $lightest-colour;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        margin: 0 0 1rem 0;
+        border: 1px solid $lightest-colour;
+        background-color: $darkest-colour;
+        transition: background-color 0.5s ease, border 0.5s ease;
+
+            &:hover {
+            background-color: $complimentary-accent;
+	        border: 1px solid $complimentary-accent;
+            }
+    }
+    
+
+    
+    h1 {
+        span:first-of-type { /* accessing '+' in <h1> */
+            font-family: Impact, sans-serif;
+            vertical-align: middle;
+            font-size: 4rem;
+            color: $accent-colour;
+        }
+        span:last-of-type {
+            font-style: italic;
+            text-transform: lowercase;
+        }
+    }
+}
+
+.bg-gold {
+    background-color: $accent-colour;
+	padding: 2rem 0;
+    
+    ul li {
+        width: 100%;  
+        
+        a {
+            display: block;
+            padding: 1rem;
+            background-color: $lightest-colour;
+            text-decoration: none;
+            border-bottom: 1px solid $mid-tone-light;  
+            
+            &:hover { /* when <a> that belongs to .bg-gold is hovered, color the text of second <span> that belongs to <a> to darkgoldenrod */
+                color: $dark-tone;
+                background-color: $light-tone;
+            }
+        }
+        
+        &:last-child a {
+	        border: none;
+        }
+        
+        span:last-child {
+            text-transform: uppercase;
+            margin: 0 0 0 1rem;
+        }
+}
+
+
+/* -- FOURTH DIV -- */
+.second {
+    padding: 2rem 0;
+    
+    ul::after{ /* clear <li> floated left */
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    h1 span:first-of-type { /* accessing '+' in <h1> */
+        font-family: Impact, sans-serif;
+        vertical-align: middle;
+        font-size: 4rem;
+    }
+    
+    h1 span:last-of-type {
+        font-style: italic;
+    }
+    
+    ul li{
+        float: left;
+        width: 50%;
+        padding: 0 1rem 0 0;
+        
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    .names {
+        display: block;
+        text-align: center;
+        margin: 0.5rem 0 1rem 0;
+    }
+    
+    p{
+        padding: 0 1rem 0 0;
+        line-height: 1.5rem;
+        
+        &:last-child{
+            padding: 0;
+        }
+
+    }
+    
+    
+}
+
+/* -- FIFTH DIV -- */
+.bg-black {
+	background-color: #212121;
+    color: $lightest-colour;
+    padding: 2rem 0 3rem 0;
+    
+    h1 {
+        text-transform: uppercase;
+        
+        span:first-of-type { /* accessing '+' in <h1> */
+            font-family: Impact, sans-serif;
+            vertical-align: middle;
+            font-size: 4rem;
+        }
+        
+        span:last-of-type {
+            font-style: italic;
+            text-transform: lowercase;
+        }
+    }
+    
+    .container {
+        padding: 0;
+        margin: 0 0 1rem 0;
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+        
+        ul {
+            margin: 0 0 1.2rem 0;
+            
+            li {
+                margin: 0 0 0.8rem 0;
+            }
+        }
+    }
+}
+
+.form-box {
+    padding: 0.5rem 0;
+    
+    input{
+        border: none;
+        width: 100%;
+        height: 2rem;
+        padding: 1.5rem;
+    }
+
+    input[type="submit"]{
+        border: none;
+        background-color: $accent-colour;
+        color: $darkest-colour;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 1.3rem 2.3rem 2.3rem 2.3rem;
+    }
+    
+    .form-box textarea{
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    }  
+}
+
+/* -- SIXTH DIV -- */
+.third p {
+    text-align: center;
+	line-height: 1.6rem;
+}
+    
+}
+    
+      
+@import "queries";
